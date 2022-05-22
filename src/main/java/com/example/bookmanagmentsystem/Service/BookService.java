@@ -9,6 +9,8 @@ import com.example.bookmanagmentsystem.Repository.BooksDB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class BookService {
@@ -20,4 +22,7 @@ public class BookService {
          return booksDB.saveBook(book);
     }
 
+    public List<Book> getAllBooks() {
+        return booksDB.getBooks();
+    }
 }

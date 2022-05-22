@@ -9,6 +9,7 @@ import com.example.bookmanagmentsystem.Model.Book;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public class BooksDB {
@@ -22,7 +23,11 @@ public class BooksDB {
             }
         }
         BookList.add(book);
+        System.out.println(book+"is inserted");
         return "Book saved";
     }
 
+    public List<Book> getBooks() {
+        return BookList;
+    }
 }

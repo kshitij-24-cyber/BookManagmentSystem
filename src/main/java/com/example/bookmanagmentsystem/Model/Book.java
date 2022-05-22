@@ -11,7 +11,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Book {
+public class  Book {
     private String Author;
     private int ID;
     private int cost;
@@ -22,4 +22,12 @@ public class Book {
         this.cost = cost;
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "Author='" + Author + '\'' +
+                ", ID=" + ID +
+                ", cost=" + cost +
+                '}';
+    }
 }

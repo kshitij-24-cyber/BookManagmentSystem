@@ -28,8 +28,8 @@ public class BookController {
         return bookService.getAllBooks();
     }
 
-    @GetMapping( "/getBookById/{id}")
-    public Book getBookById(@PathVariable int id){
+    @GetMapping("/getBookById/{id}")
+    public Book getBookById(@PathVariable int id) {
         return bookService.getBookById(id);
     }
 

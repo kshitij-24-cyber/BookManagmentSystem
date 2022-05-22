@@ -5,14 +5,19 @@ package com.example.bookmanagmentsystem.Service;/*
  */
 
 import com.example.bookmanagmentsystem.Model.Book;
+import com.example.bookmanagmentsystem.Repository.BooksDB;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class BookService {
 
+    @Autowired
+    BooksDB booksDB;
+
     public String insertBook(Book book) {
-        return "hi";
+         return booksDB.saveBook(book);
     }
 
 }

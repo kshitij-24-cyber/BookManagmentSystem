@@ -5,17 +5,21 @@ package com.example.bookmanagmentsystem.Controller;/*
  */
 
 import com.example.bookmanagmentsystem.Model.Book;
+import com.example.bookmanagmentsystem.Service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-
 public class BookController {
-    @PostMapping("/api/v1/insertBook")
 
+    @Autowired
+    BookService bookService;
+
+    @PostMapping("/api/v1/insertBook")
     public String insertBook(@RequestBody Book book) {
-        return "hey";
+        return bookService.insertBook(book);
     }
 }

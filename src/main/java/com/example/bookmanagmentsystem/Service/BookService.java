@@ -25,4 +25,9 @@ public class BookService {
     public List<Book> getAllBooks() {
         return booksDB.getBooks();
     }
+
+
+    public Book getBookById(int id) {
+        return booksDB.getBookById(id);
+    }
 }

@@ -8,10 +8,7 @@ import com.example.bookmanagmentsystem.Model.Book;
 import com.example.bookmanagmentsystem.Service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,8 +24,13 @@ public class BookController {
     }
 
     @GetMapping("/getAllBooks")
-    public List<Book>getAllBooks(){
-        return  bookService.getAllBooks();
-
+    public List<Book> getAllBooks() {
+        return bookService.getAllBooks();
     }
+
+    @GetMapping( "/getBookById/{id}")
+    public Book getBookById(@PathVariable int id){
+        return bookService.getBookById(id);
+    }
+
 }

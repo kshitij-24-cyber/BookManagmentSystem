@@ -32,5 +32,8 @@ public class BookController {
     public Book getBookById(@PathVariable int id) {
         return bookService.getBookById(id);
     }
-
+    @PostMapping("/deleteTheBookById/{id}")
+    public String deleteBookById(@PathVariable int id){
+        return bookService.deleteBookById(id);
+    }
 }

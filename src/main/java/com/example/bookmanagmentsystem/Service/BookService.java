@@ -30,4 +30,8 @@ public class BookService {
     public Book getBookById(int id) {
         return booksDB.getBookById(id);
     }
+
+    public String deleteBookById(int id) {
+        return booksDB.deleteBookById(id);
+    }
 }

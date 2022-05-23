@@ -42,6 +42,14 @@ public class BooksDB {
     }
 
 
+    public String deleteBookById(int id) {
+      if (BookList.contains(id)) {
+          BookList.remove(id);
+          return "deleted";
+      }
+      else {
+          return "BookNotPresent";
+      }
 
-
+    }
 }

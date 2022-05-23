@@ -14,42 +14,29 @@ import java.util.List;
 @Repository
 public class BooksDB {
 
-    ArrayList<Book> BookList = new ArrayList<>();
+    ArrayList<Book> booksList = new ArrayList<>();
 
-    public String saveBook(Book book) {
-        for (Book books : BookList) {
-            if (books.getID() == book.getID()) {
-                return "Book can't be saved ";
+    public String saveBook(Book book){
+        for(Book books : booksList){
+            if(books.getId() == book.getId()){
+                return "Not able to store the book";
             }
         }
-        BookList.add(book);
-        System.out.println(book + " " + " is inserted ");
-        return "Book saved";
+        booksList.add(book);
+        System.out.println(book+" is  inserted" );
+        return "Able to store the book";
     }
 
     public List<Book> getBooks() {
-        return BookList;
+        return booksList;
     }
 
-
-    public Book getBookById(int id) {
-        for (Book books : BookList) {
-            if (books.getID() == id) {
+    public Book getBookById(long id) {
+        for(Book books : booksList){
+            if(books.getId() == id){
                 return books;
             }
         }
         return null;
-    }
-
-
-    public String deleteBookById(int id) {
-      if (BookList.contains(id)) {
-          BookList.remove(id);
-          return "deleted";
-      }
-      else {
-          return "BookNotPresent";
-      }
-
     }
 }

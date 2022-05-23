@@ -12,22 +12,23 @@ import lombok.Setter;
 @Getter
 @Setter
 public class  Book {
-    private String Author;
-    private int ID;
+    private long id;
+    private String authorName;
     private int cost;
 
-    public Book(String author, int ID, int cost) {
-        Author = author;
-        this.ID = ID;
+    public Book(long id, String authorName, int cost) {
+        this.id = id;
+        this.authorName = authorName;
         this.cost = cost;
     }
 
     @Override
     public String toString() {
         return "Book{" +
-                "Author='" + Author + '\'' +
-                ", ID=" + ID +
+                "id=" + id +
+                ", authorName='" + authorName + '\'' +
                 ", cost=" + cost +
                 '}';
     }
+
 }

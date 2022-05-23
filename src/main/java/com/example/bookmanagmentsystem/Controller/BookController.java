@@ -6,6 +6,7 @@ package com.example.bookmanagmentsystem.Controller;/*
 
 import com.example.bookmanagmentsystem.Model.Book;
 import com.example.bookmanagmentsystem.Service.BookService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,22 +18,19 @@ public class BookController {
     @Autowired
     BookService bookService;
 
+    @ApiOperation("This endpoint is for inserting the books")
     @PostMapping("/insertBook")
-    public String insertBook(@RequestBody Book book) {
+    public String insertBook(@RequestBody Book book){
         return bookService.insertBook(book);
     }
 
     @GetMapping("/getAllBooks")
-    public List<Book> getAllBooks() {
+    public List<Book> getAllBooks(){
         return bookService.getAllBooks();
     }
 
     @GetMapping("/getBookById/{id}")
-    public Book getBookById(@PathVariable int id) {
+    public Book getBookById(@PathVariable long id){
         return bookService.getBookById(id);
-    }
-    @PostMapping("/deleteTheBookById/{id}")
-    public String deleteBookById(@PathVariable int id){
-        return bookService.deleteBookById(id);
     }
 }

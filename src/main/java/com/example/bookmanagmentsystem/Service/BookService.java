@@ -18,20 +18,15 @@ public class BookService {
     @Autowired
     BooksDB booksDB;
 
-    public String insertBook(Book book) {
-         return booksDB.saveBook(book);
+    public String insertBook(Book book){
+        return booksDB.saveBook(book);
     }
 
     public List<Book> getAllBooks() {
         return booksDB.getBooks();
     }
 
-
-    public Book getBookById(int id) {
+    public Book getBookById(long id) {
         return booksDB.getBookById(id);
-    }
-
-    public String deleteBookById(int id) {
-        return booksDB.deleteBookById(id);
     }
 }
